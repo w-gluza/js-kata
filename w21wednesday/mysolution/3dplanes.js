@@ -1,17 +1,21 @@
 "use strict";
 
 document.querySelector("#stage").addEventListener("mousemove", mouseMove);
+document.querySelector("#stage").addEventListener("onmouseout", clearCoor);
 
+// Find the x and y coordinates of the mouse, relative to the stage (upper left corner is 0,0)
 
 function mouseMove(e) {
-    // Find the x and y coordinates of the mouse, relative to the stage (upper left corner is 0,0)
-    let x_position = document.querySelector('#x_position');
-    let y_position = document.querySelector('#y_position');
-
-    x_position.innerHTML = e.clientX;
-    y_position.innerHTML = e.clientY;
+    let x_position = e.clientX;
+    let y_position = e.clientY;
+    let coor = "Coordinates: (" + x_position + "," + y_position + ")";
+    document.querySelector("#cord").innerHTML = coor;
 }
-document.onmousemove = mouseMove;
+ // This is just for me to understand what is happening 
+function clearCoor() {
+    document.querySelector("#cord").innerHTML = "";
+}
+
     // Find the center of the stage (relative to the stage) (centerX and centerY)
 
     // Calculate the horisontal (distX) and vertical (distY) distance from the mouse to the center of the stage
