@@ -12,11 +12,13 @@ function mouseMove(e) {
     document.querySelector("#cord").innerHTML = coor;
 }
  // This is just for me to understand what is happening 
-function clearCoor() {
+    function clearCoor() {
     document.querySelector("#cord").innerHTML = "";
 }
 
     // Find the center of the stage (relative to the stage) (centerX and centerY)
+    let centerX = stageID.offsetLeft + stageID.offsetWidth / 2;
+    let centerY = stageID.offsetTop + stageID.offsetHeight / 2;
 
     // Calculate the horisontal (distX) and vertical (distY) distance from the mouse to the center of the stage
 
